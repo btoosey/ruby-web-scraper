@@ -20,9 +20,11 @@ def scraper
   end
 end
 
+private
+
 def extract_number(text)
   # Regex expression to isolate number in string
-  text[/[0-9]/].to_i
+  text[/\d+/].to_i
 end
 
 scraper
