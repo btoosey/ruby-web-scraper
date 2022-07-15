@@ -10,14 +10,19 @@ def scraper
   parsed_page.css('tr.athing').each do |entry|
     subtext = entry.next_element.css('td.subtext')
     entry = {
-      rank: entry.css('span.rank').text,
+      rank: extract_number(entry.css('span.rank').text),
       title: entry.css('a.titlelink').text,
-      score: subtext.css('span.score').text,
-      comments: subtext.css('a').last.text
+      score: extract_number(subtext.css('span.score').text),
+      comments: extract_number(subtext.css('a').last.text)
     }
 
     puts entry
   end
+end
+
+def extract_number(text)
+  # Regex expression to isolate number in string
+  text[/[0-9]/].to_i
 end
 
 scraper
