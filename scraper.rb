@@ -23,10 +23,12 @@ def scraper
     entries << entry
   end
 
-  puts 'Filter 1'
+  puts '
+  Filter 1'
   filter_one(entries)
 
-  puts 'Filter 2'
+  puts '
+  Filter 2'
   filter_two(entries)
 end
 
@@ -42,6 +44,10 @@ end
 
 def filter_two(entries)
   filtered_entries = less_or_eq_five(entries)
+  ordered_entries = order_entries_score(filtered_entries)
+  ordered_entries.each do |entry|
+    puts "#{entry.title} | #{entry.score} Points"
+  end
 end
 
 def more_than_five(entries)
@@ -65,6 +71,7 @@ def order_entries(entries)
 end
 
 def order_entries_score(entries)
+  entries.sort_by { |entry| entry.score }
 end
 
 def extract_number(text)
