@@ -1,4 +1,4 @@
-require "./scraper"
+require './lib/scraper'
 
 describe 'Filter 2' do
   entries = [
@@ -32,7 +32,7 @@ describe 'Filter 2' do
   end
 
   it 'orders entries by score' do
-    f = order_entries_score(filtered_entries)
+    f = order_entries(filtered_entries, 'score')
     expect(f).to eq(ordered_entries)
   end
 end
