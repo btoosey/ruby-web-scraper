@@ -27,7 +27,11 @@ end
 private
 
 def more_than_five(entries)
-
+  filtered_entries = []
+  entries.each do |entry|
+    filtered_entries << entry if entry[:title].split.length > 5
+  end
+  filtered_entries
 end
 
 def extract_number(text)
