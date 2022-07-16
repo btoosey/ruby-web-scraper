@@ -1,4 +1,4 @@
-require "./lib/scraper"
+require './lib/scraper'
 
 describe 'Filter 1' do
   entries = [
@@ -32,7 +32,7 @@ describe 'Filter 1' do
   end
 
   it 'orders entries by number of comments' do
-    f = order_entries(filtered_entries, "comments")
+    f = order_entries(filtered_entries, 'comments')
     expect(f).to eq(ordered_entries)
   end
 end

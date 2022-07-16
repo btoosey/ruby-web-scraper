@@ -1,5 +1,5 @@
-source "https://rubygems.org"
+source 'https://rubygems.org'
 
-gem "httparty"
-gem "nokogiri"
-gem "rspec", "~> 3.0"
+gem 'httparty'
+gem 'nokogiri'
+gem 'rspec', '~> 3.0'
