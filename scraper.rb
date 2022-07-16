@@ -64,6 +64,9 @@ def order_entries(entries)
   entries.sort_by { |entry| entry.comments }
 end
 
+def order_entries_score(entries)
+end
+
 def extract_number(text)
   # Regex expression to isolate number in string
   text[/\d+/].to_i

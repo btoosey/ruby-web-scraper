@@ -19,8 +19,20 @@ describe 'Filter 2' do
     entries[5]
   ]
 
+  ordered_entries = [
+    entries[5],
+    entries[2],
+    entries[4],
+    entries[0]
+  ]
+
   it 'selects entries with titles of less than or equal to 5 words' do
     f = less_or_eq_five(entries)
     expect(f).to eq(filtered_entries)
+  end
+
+  it 'orders entries by score' do
+    f = order_entries_score(filtered_entries)
+    expect(f).to eq(ordered_entries)
   end
 end
