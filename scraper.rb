@@ -1,6 +1,5 @@
 require 'httparty'
 require 'nokogiri'
-require 'byebug'
 require_relative 'entry'
 
 def scraper
