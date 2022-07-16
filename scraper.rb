@@ -25,6 +25,9 @@ def scraper
 
   puts 'Filter 1'
   filter_one(entries)
+
+  puts 'Filter 2'
+  filter_two(entries)
 end
 
 private
@@ -37,6 +40,10 @@ def filter_one(entries)
   end
 end
 
+def filter_two(entries)
+  filtered_entries = less_or_eq_five(entries)
+end
+
 def more_than_five(entries)
   filtered_entries = []
   entries.each do |entry|
@@ -46,6 +53,11 @@ def more_than_five(entries)
 end
 
 def less_or_eq_five(entries)
+  filtered_entries = []
+  entries.each do |entry|
+    filtered_entries << entry if entry.title.split.length <= 5
+  end
+  filtered_entries
 end
 
 def order_entries(entries)
