@@ -1,4 +1,4 @@
-require "./scraper"
+require "./lib/scraper"
 
 describe 'Filter 1' do
   entries = [
