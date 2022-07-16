@@ -19,9 +19,22 @@ describe 'Filter 1' do
     { rank: 8, title: 'Volkswagen enters battery business with $20B investment', score: 300, comments: 188 }
   ]
 
+  ordered_entries = [
+    { rank: 2, title: 'Kurt Vonnegut on the 8 “shapes” of stories', score: 158, comments: 20 },
+    { rank: 7, title: 'Ask HN: How do you use Bitcoin in a trustless way?', score: 34, comments: 26 },
+    { rank: 8, title: 'Volkswagen enters battery business with $20B investment', score: 300, comments: 188 },
+    { rank: 4, title: 'Advice for the next dozen Rust GUIs', score: 243, comments: 212 }
+  ]
+
   it 'selects entries with titles of more than 5 words' do
     f = more_than_five(entries)
 
     expect(f).to eq(filtered_entries)
+  end
+
+  it 'orders entries by number of comments' do
+    f = order_entries(filtered_entries)
+
+    expect(f).to eq(ordered_entries)
   end
 end

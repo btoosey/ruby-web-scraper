@@ -34,6 +34,9 @@ def more_than_five(entries)
   filtered_entries
 end
 
+def order_entries(entries)
+end
+
 def extract_number(text)
   # Regex expression to isolate number in string
   text[/\d+/].to_i
