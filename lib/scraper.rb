@@ -35,7 +35,7 @@ private
 
 def filter_one(entries)
   filtered_entries = more_than_five(entries)
-  ordered_entries = order_entries(filtered_entries)
+  ordered_entries = order_entries(filtered_entries, "comments")
   ordered_entries.each do |entry|
     puts "#{entry.title} | #{entry.comments} Comments"
   end
@@ -43,7 +43,7 @@ end
 
 def filter_two(entries)
   filtered_entries = less_or_eq_five(entries)
-  ordered_entries = order_entries_score(filtered_entries)
+  ordered_entries = order_entries(filtered_entries, "score")
   ordered_entries.each do |entry|
     puts "#{entry.title} | #{entry.score} Points"
   end
@@ -65,12 +65,13 @@ def less_or_eq_five(entries)
   filtered_entries
 end
 
-def order_entries(entries)
-  entries.sort_by { |entry| entry.comments }
-end
-
-def order_entries_score(entries)
-  entries.sort_by { |entry| entry.score }
+def order_entries(entries, query)
+  case query
+  when "comments"
+    entries.sort_by { |entry| entry.comments }
+  when "score"
+    entries.sort_by { |entry| entry.score }
+  end
 end
 
 def extract_number(text)

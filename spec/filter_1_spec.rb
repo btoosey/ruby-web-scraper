@@ -32,7 +32,7 @@ describe 'Filter 1' do
   end
 
   it 'orders entries by number of comments' do
-    f = order_entries(filtered_entries)
+    f = order_entries(filtered_entries, "comments")
     expect(f).to eq(ordered_entries)
   end
 end
