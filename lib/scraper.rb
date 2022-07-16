@@ -22,16 +22,20 @@ def scraper
     entries << entry
   end
 
-  puts '
-  Filter 1'
-  filter_one(entries)
-
-  puts '
-  Filter 2'
-  filter_two(entries)
+  program_output(entries)
 end
 
 private
+
+def program_output(entries)
+  puts
+  puts 'Filter 1:'
+  filter_one(entries)
+
+  puts
+  puts 'Filter 2:'
+  filter_two(entries)
+end
 
 def filter_one(entries)
   filtered_entries = more_than_five(entries)
